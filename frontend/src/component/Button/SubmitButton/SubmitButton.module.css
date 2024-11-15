@@ -1,0 +1,15 @@
+.button{
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 3px;
+    font-weight: 700;
+    border: none;
+    background: linear-gradient(to top right,rgb(253, 222, 137),rgb(255, 250, 174));
+    cursor: pointer;
+}
+.button:hover{
+    background: linear-gradient(to top right,rgb(240, 193, 66),rgb(241, 235, 138));
+}
+.button:active{
+    transform: scale(0.95);
+}

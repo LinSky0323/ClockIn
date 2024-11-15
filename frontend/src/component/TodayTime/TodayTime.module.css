@@ -1,0 +1,26 @@
+.noclock{
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    color:blue;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+.title{
+    font-weight: 700;
+    font-size: 18px;
+    color:rgb(170, 72, 72);
+}
+.time{
+    font-weight: 600;
+    font-size: 16px;
+    color:rgb(165, 20, 20);
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

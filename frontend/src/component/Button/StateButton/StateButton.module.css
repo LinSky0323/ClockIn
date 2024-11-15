@@ -1,0 +1,23 @@
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.btn{
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 3px;
+    cursor: pointer;
+}
+.btn:hover{
+    transform: scale(1.05);
+}
+.btn:active{
+    transform: scale(0.95);
+}
+.high{
+    background-color: rgb(223, 230, 137);
+}

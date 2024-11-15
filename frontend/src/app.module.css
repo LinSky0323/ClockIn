@@ -1,0 +1,11 @@
+.head{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.datebar{
+    margin-top: 20px;
+}
+.clock{
+    display: block;
+}

@@ -1,0 +1,6 @@
+flask
+flask_restful
+mysqlclient
+requests
+flask_cors
+Flask-JWT-Extended

@@ -1,0 +1,8 @@
+.title{
+    color:transparent;
+    font-size: 30px;
+    font-weight: 700;
+    background: linear-gradient(to right top, rgb(230,230,230),rgb(184, 176, 65),rgb(143, 141, 141),rgb(184, 176, 65),rgb(200,200,200));
+    background-clip: text; /* 背景裁剪到文字 */
+    margin-left: 10px;
+}
