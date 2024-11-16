@@ -4,6 +4,7 @@ import { useFormState } from "react-dom"
 import { useState } from "react"
 import { useChangeRemind } from "../../lib/useChangeRemind"
 import { useAuth } from "../../AuthContext"
+import { APIURL } from "../../APIURL."
 
 export function LoginForm() {
     
@@ -33,7 +34,7 @@ export function LoginForm() {
             remind.setRemind("只能輸入英文或數字")
             return
         }
-        const result = await fetch("http://localhost:5000/user",{
+        const result = await fetch(APIURL+"user",{
             method:"PUT",
             headers:{"Content-type":"application/json"},
             body:JSON.stringify({account,password})

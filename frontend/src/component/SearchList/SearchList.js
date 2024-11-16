@@ -4,6 +4,7 @@ import { changeDate } from "../../lib/changeDate"
 import { changeTime } from "../../lib/changeTime"
 import { useFormState } from "react-dom"
 import { SubmitButton } from "../Button/SubmitButton/SubmitButton"
+import { APIURL } from "../../APIURL."
 export function SearchList(){
     const [loading,setLoading] = useState(false)
     const [list,setList] = useState(null)
@@ -16,7 +17,7 @@ export function SearchList(){
     useEffect(()=>{
         const getTIme = async()=>{
             const token = localStorage.getItem("token")
-            const res = await fetch("http://localhost:5000/searchBySelf",{
+            const res = await fetch(APIURL+"searchBySelf",{
                 method:"POST",
                 headers:{
                   "Content-type":"application/json",
@@ -32,7 +33,7 @@ export function SearchList(){
     const search = async ()=>{
         const [y, m, d] = date.split("-");
         const token = localStorage.getItem("token")
-            const res = await fetch("http://localhost:5000/searchBySelf",{
+            const res = await fetch(APIURL+"searchBySelf",{
                 method:"POST",
                 headers:{
                   "Content-type":"application/json",

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import styles from "./SearchApply.module.css"
 import { changeDate } from "../../lib/changeDate"
 import { changeTime } from "../../lib/changeTime"
+import { APIURL } from "../../APIURL."
 export function SearchApply(){
     const [loading,setLoading] = useState(false)
     const [list,setList] = useState(null)
@@ -9,7 +10,7 @@ export function SearchApply(){
     useEffect(()=>{
         const getApply = async()=>{
             const token = localStorage.getItem("token")
-            const res = await fetch("http://localhost:5000/searchApply",{
+            const res = await fetch(APIURL+"searchApply",{
                 method:"GET",
                 headers:{
                   "Content-type":"application/json",

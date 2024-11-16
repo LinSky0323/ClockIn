@@ -1,3 +1,4 @@
+import { APIURL } from "../../APIURL."
 import { useAuth } from "../../AuthContext"
 import { StopPropogation } from "../../lib/stopPropagation"
 import { useChangeRemind } from "../../lib/useChangeRemind"
@@ -11,7 +12,7 @@ export function ApplyMask({date,time,CI,setMask}){
     }
     const submit = async()=>{
         const token = localStorage.getItem("token")
-        const res = await fetch("http://localhost:5000/apply",{
+        const res = await fetch(APIURL+"apply",{
             method:"POST",
             headers:{
               "Content-type":"application/json",

@@ -5,6 +5,7 @@ import { changeTime } from "../../lib/changeTime"
 import { useFormState } from "react-dom"
 import { SubmitButton } from "../Button/SubmitButton/SubmitButton"
 import { useChangeRemind } from "../../lib/useChangeRemind"
+import { APIURL } from "../../APIURL."
 export function DTimeList(){
     const [loading,setLoading] = useState(false)
     const [list,setList] = useState(null)
@@ -14,7 +15,7 @@ export function DTimeList(){
     useEffect(()=>{
         const getTIme = async()=>{
             const token = localStorage.getItem("token")
-            const res = await fetch("http://localhost:5000/searchByDepartment",{
+            const res = await fetch(APIURL+"searchByDepartment",{
                 method:"GET",
                 headers:{
                   "Content-type":"application/json",
@@ -42,7 +43,7 @@ export function DTimeList(){
             }
         }
         const token = localStorage.getItem("token")
-        const res = await fetch("http://localhost:5000/searchByDepartment",{
+        const res = await fetch(APIURL+"searchByDepartment",{
             method:"POST",
             headers:{
                 "Content-type":"application/json",

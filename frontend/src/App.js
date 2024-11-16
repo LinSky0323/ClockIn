@@ -18,6 +18,8 @@ import { DApplyList } from './component/DAppltList/DApplyList';
 import { Account } from './component/Account/Account';
 import { NewCICO } from './component/NewCICO/NewCICO';
 import { SFCICO } from './component/SFCICO/SFCICO';
+import { APIURL } from './APIURL.';
+
 
 
 const List3 = [{"item":"申請補打","no":"1"},{"item":"查詢出勤","no":"2"},{"item":"查詢申請","no":"3"}]
@@ -30,7 +32,7 @@ function App() {
   useEffect(()=>{
 
     const check_user = async(token)=>{
-      const result = await fetch("http://localhost:5000/user",{
+      const result = await fetch(APIURL+"user",{
         method:"GET",
         headers:{
           "Content-type":"application/json",

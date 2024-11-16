@@ -3,6 +3,7 @@ import { useChangeRemind } from "../../lib/useChangeRemind"
 import { useFormState } from "react-dom"
 import { SubmitButton } from "../Button/SubmitButton/SubmitButton"
 import { useState } from "react"
+import { APIURL } from "../../APIURL."
 
 export function Account(){
     const [name,setName] = useState("")
@@ -20,7 +21,7 @@ export function Account(){
             return
         }
         const token = localStorage.getItem("token")
-        const res = await fetch("http://localhost:5000/user",{
+        const res = await fetch(APIURL+"user",{
             method:"POST",
             headers:{
                 "Content-type":"application/json",

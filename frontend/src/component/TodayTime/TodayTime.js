@@ -2,6 +2,7 @@ import { useEffect} from "react"
 import styles from "./TodayTime.module.css"
 import { changeTime } from "../../lib/changeTime"
 import { useAuth } from "../../AuthContext"
+import { APIURL } from "../../APIURL."
 
 export function TodayTime(){
     const token = localStorage.getItem("token")
@@ -10,7 +11,7 @@ export function TodayTime(){
 
     useEffect(()=>{
         async function getmytime(){
-            const res = await fetch("http://localhost:5000/searchBySelf",{
+            const res = await fetch(APIURL+"searchBySelf",{
                 method:"GET",
                 headers:{
                   "Content-type":"application/json",

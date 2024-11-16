@@ -5,6 +5,7 @@ import { changeTime } from "../../lib/changeTime"
 import { useChangeRemind } from "../../lib/useChangeRemind"
 import { useFormState } from "react-dom"
 import { SubmitButton } from "../Button/SubmitButton/SubmitButton"
+import { APIURL } from "../../APIURL."
 
 
 const Item = memo(({item})=>{
@@ -47,7 +48,7 @@ const Item = memo(({item})=>{
     }
     const handleClick = async()=>{
         const token = localStorage.getItem("token")
-        const res = await fetch("http://localhost:5000/fixData",{
+        const res = await fetch(APIURL+"fixData",{
             method:"PUT",
             headers:{
                 "Content-type":"application/json",
@@ -102,7 +103,7 @@ export function SFCICO(){
             return
         }
         const token = localStorage.getItem("token")
-        const res = await fetch("http://localhost:5000/searchData",{
+        const res = await fetch(APIURL+"searchData",{
             method:"POST",
             headers:{
                 "Content-type":"application/json",

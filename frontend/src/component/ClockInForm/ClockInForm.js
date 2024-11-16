@@ -2,6 +2,7 @@ import styles from "./ClockInForm.module.css"
 import { useFormState,useFormStatus } from "react-dom"
 import { useChangeRemind } from "../../lib/useChangeRemind"
 import { useAuth } from "../../AuthContext"
+import { APIURL } from "../../APIURL."
 
 
 
@@ -17,7 +18,7 @@ export function ClockInForm(){
             const lon = position.coords.longitude
             if(24.963676>lat>24.959772 && 121.143185>lon>121.137934){
                 const token = localStorage.getItem("token")
-                const res = await fetch("http://localhost:5000/time",{
+                const res = await fetch(APIURL+"time",{
                     method:"POST",
                     headers:{
                       "Content-type":"application/json",

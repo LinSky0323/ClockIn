@@ -5,6 +5,7 @@ import { changeTime } from "../../lib/changeTime"
 import { useChangeRemind } from "../../lib/useChangeRemind"
 import { useFormState } from "react-dom"
 import { SubmitButton } from "../Button/SubmitButton/SubmitButton"
+import { APIURL } from "../../APIURL."
 
 
 const Item = memo(({item,agree,disagree})=>{
@@ -36,7 +37,7 @@ export function DApplyList(){
     
     const getItem = async()=>{
         const token = localStorage.getItem("token")
-        const res = await fetch("http://localhost:5000/searchApply",{
+        const res = await fetch(APIURL+"searchApply",{
             method:"POST",
             headers:{
                 "Content-type":"application/json",
@@ -69,7 +70,7 @@ export function DApplyList(){
 
     const agree =useCallback(async (e)=>{
         const token = localStorage.getItem("token")
-        const res = await fetch("http://localhost:5000/apply",{
+        const res = await fetch(APIURL+"apply",{
             method:"PUT",
             headers:{
                 "Content-type":"application/json",
@@ -87,7 +88,7 @@ export function DApplyList(){
         
     const disagree =useCallback(async (e)=>{
         const token = localStorage.getItem("token")
-        const res = await fetch("http://localhost:5000/apply",{
+        const res = await fetch(APIURL+"apply",{
             method:"PUT",
             headers:{
                 "Content-type":"application/json",
