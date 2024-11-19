@@ -18,7 +18,9 @@ export function SearchApply(){
                 },
               })
             const data = await res.json()
-            setList(data)
+            if(data.hasOwnProperty("ok")){
+                setList(data["ok"])
+            }
         }
         getApply().then(setLoading(true))
     },[])
@@ -41,7 +43,7 @@ export function SearchApply(){
                    
                     {(list !== null ) ? 
                     list.map((item)=>{
-                        return(<tr key={item[3]}>
+                        return(<tr key={item[0]}>
                             <td className={styles.td}>{changeDate(item[3])}</td>
                             <td className={styles.td}>{item[4]===1?"上班":"下班"}</td>
                             <td className={styles.td}>{changeTime(item[5])}</td>

@@ -213,7 +213,7 @@ def Search_my_apply():
     timelist = [list(item) for item in result["ok"]]
     for i in timelist:
         i[5] = i[5].seconds
-    return jsonify(timelist),200
+    return jsonify({"ok":timelist}),200
 #search部門的apply
 @app.route("/searchApply",methods=["POST"])
 @jwt_required()
